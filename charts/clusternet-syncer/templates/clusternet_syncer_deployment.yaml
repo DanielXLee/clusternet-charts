@@ -46,27 +46,12 @@ spec:
       securityContext:
         runAsNonRoot: true
       terminationGracePeriodSeconds: 10
-      volumes:
-      - name: credentials
-        secret:
-          defaultMode: 420
-          items:
-          - key: credentials
-            path: credentials
-          secretName: clusternet-syncer-tencentcloud-credentials
       serviceAccountName: {{ template "clusternet-syncer.serviceAccountName" . }}
       containers:
         - name: clusternet-syncer
           image: {{ include "common.images.image" ( dict "imageRoot" .Values.image "global" .Values.global) }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources: {{- toYaml .Values.resources | nindent 12 }}
-          env:
-            - name: TENCENT_CLOUD_ENDPOINT
-              value: {{ .Values.tencentCloud.endpoint }}
-            - name: Region
-              value: {{ .Values.tencentCloud.region }}
-            - name: TENCENTCLOUD_CREDENTIALS_FILE
-              value: /etc/.tencentcloud/credentials
           {{- if .Values.livenessProbe }}
           livenessProbe: {{- include "common.tplvalues.render" (dict "value" .Values.livenessProbe "context" $) | nindent 12 }}
           {{- end }}
@@ -75,9 +60,6 @@ spec:
           {{- end }}
           securityContext:
             allowPrivilegeEscalation: false
-          volumeMounts:
-          - mountPath: /etc/.tencentcloud
-            name: credentials
           command:
             - /usr/local/bin/clusternet-syncer
           args:
