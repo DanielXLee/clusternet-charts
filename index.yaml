@@ -1,0 +1,76 @@
+apiVersion: v1
+entries:
+  clusternet-agent:
+  - annotations:
+      category: Infrastructure
+      role: Agent
+    apiVersion: v2
+    appVersion: v0.6.0
+    created: "2021-11-15T09:17:21.092241139Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.10.0
+    description: Chart for clusternet-agent
+    digest: 7e863fd994b916f98f8be7a7a2f60e36c2b2b8ca7894936d765d0a402a0814dc
+    home: https://github.com/DanielXLee/clusternet-charts/tree/main/charts/clusternet-agent
+    keywords:
+    - clusternet
+    - agent
+    - clusternet-agent
+    name: clusternet-agent
+    sources:
+    - https://github.com/DanielXLee/clusternet-charts/tree/main/charts/clusternet-agent
+    type: application
+    urls:
+    - https://github.com/DanielXLee/clusternet-charts/releases/download/clusternet-agent-0.2.0/clusternet-agent-0.2.0.tgz
+    version: 0.2.0
+  clusternet-hub:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: v0.6.0
+    created: "2021-11-15T09:17:21.217685983Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.10.0
+    description: Chart for clusternet-hub
+    digest: 7c06fc945537602058e38ab1cca6d7fdfb1199c91046426af51538f94e55952f
+    home: https://github.com/DanielXlee/clusternet-charts/tree/main/charts/clusternet-hub
+    keywords:
+    - clusternet
+    - cluster management
+    name: clusternet-hub
+    sources:
+    - https://github.com/DanielXLee/clusternet-charts/tree/main/charts/clusternet-hub
+    type: application
+    urls:
+    - https://github.com/DanielXLee/clusternet-charts/releases/download/clusternet-hub-0.2.0/clusternet-hub-0.2.0.tgz
+    version: 0.2.0
+  clusternet-syncer:
+  - annotations:
+      category: Infrastructure
+      role: Syncer
+    apiVersion: v2
+    appVersion: v0.6.0
+    created: "2021-11-15T09:17:21.398838571Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.10.0
+    description: Chart for clusternet-syncer
+    digest: 35976a34a6ee2d26f9d912840dbe4693558f10484c4cb2bb50cdebba4d30a49a
+    home: https://github.com/DanielXLee/clusternet-charts/tree/main/charts/clusternet-syncer
+    keywords:
+    - clusternet
+    - syncer
+    - clusternet-syncer
+    name: clusternet-syncer
+    sources:
+    - https://github.com/DanielXLee/clusternet-charts/tree/main/charts/clusternet-syncer
+    type: application
+    urls:
+    - https://github.com/DanielXLee/clusternet-charts/releases/download/clusternet-syncer-0.2.0/clusternet-syncer-0.2.0.tgz
+    version: 0.2.0
+generated: "2021-11-15T09:17:21.398960874Z"
