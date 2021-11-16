@@ -72,13 +72,6 @@ resources:
   requests:
     cpu: 100m
     memory: 20Mi
-## @param hostAliases host aliases to add to the pod
-## ref: https://kubernetes.io/docs/tasks/network/customize-hosts-file-for-pods
-##
-hostAliases:
-  - hostnames:
-    - tke.test.tencentcloudapi.com
-    ip: 169.254.0.95
 ## @param livenessProbe Specify a liveness probe
 ## ref: http://kubernetes.io/docs/user-guide/pod-states/#container-probes
 ##

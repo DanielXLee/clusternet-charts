@@ -62,17 +62,16 @@ The command removes all the Kubernetes components associated with the chart and 
 
 | Name                        | Description                                                                               | Value                          |
 | --------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------ |
-| `replicaCount`              | Specify number of clusternet-syncer replicas                                               | `1`                            |
+| `replicaCount`              | Specify number of clusternet-syncer replicas                                              | `1`                            |
 | `serviceAccount.name`       | The name of the ServiceAccount to create                                                  | `"clusternet-syncer"`          |
-| `livenessProbe`             | Specify a readiness probe                                                                 |                                |
+| `livenessProbe`             | Specify a liveness probe                                                                  |                                |
 | `readinessProbe`            | Specify a readiness probe                                                                 |                                |
-| `hostAliases`               | Specify hostAliases for the service                                                       |                                |
-| `image.registry`            | clusternet-syncer image registry                                                           | `quay.io`                      |
-| `image.repository`          | clusternet-syncer image repository                                                         | `danielxlee/clusternet-syncer` |
-| `image.tag`                 | clusternet-syncer image tag (immutable tags are recommended)                               | `v0.6.0`                       |
-| `image.pullPolicy`          | clusternet-syncer image pull policy                                                        | `IfNotPresent`                 |
+| `image.registry`            | clusternet-syncer image registry                                                          | `quay.io`                      |
+| `image.repository`          | clusternet-syncer image repository                                                        | `danielxlee/clusternet-syncer` |
+| `image.tag`                 | clusternet-syncer image tag (immutable tags are recommended)                              | `v0.6.0`                       |
+| `image.pullPolicy`          | clusternet-syncer image pull policy                                                       | `IfNotPresent`                 |
 | `image.pullSecrets`         | Specify docker-registry secret names as an array                                          | `[]`                           |
-| `extraArgs`                 | Additional command line arguments to pass to clusternet-syncer                             | `{"v":4}`                      |
+| `extraArgs`                 | Additional command line arguments to pass to clusternet-syncer                            | `{"v":4}`                      |
 | `resources.limits`          | The resources limits for the container                                                    | `{}`                           |
 | `resources.requests`        | The requested resources for the container                                                 | `{}`                           |
 | `nodeSelector`              | Node labels for pod assignment                                                            | `{}`                           |
