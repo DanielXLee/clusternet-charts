@@ -34,7 +34,7 @@ kubectl apply -f https://raw.githubusercontent.com/clusternet/clusternet/main/ma
 To install the chart with the release name `my-hub`:
 
 ```console
-helm repo add clusternet https://danielxlee.github.io/charts
+helm repo add clusternet https://danielxlee.github.io/clusternet-charts
 helm install my-hub -n clusternet-system --create-namespace clusternet/clusternet-hub
 kubectl apply -f https://raw.githubusercontent.com/clusternet/clusternet/main/manifests/samples/cluster_bootstrap_token.yaml
 ```

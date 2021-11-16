@@ -12,8 +12,9 @@ helm install my-clusternet-syncer -n clusternet-system --create-namespace \
 
 `clusternet-syncer` is responsible for
 
-- Sync managed cluster status info to tkestack cluster.
-- Clean up clusternet agent resources from managed cluster when the managed cluster deleted.
+- Sync clusternet managed cluster status to tkestack managed cluster.
+- Remove bootstrap token when child cluster registered.
+- Clean up clusternet agent resources from child cluster when the child cluster deleted.
 
 ## Prerequisites
 
@@ -25,7 +26,7 @@ helm install my-clusternet-syncer -n clusternet-system --create-namespace \
 To install the chart with the release name `my-syncer` and release namespace `clusternet-system`:
 
 ```console
-helm repo add clusternet https://danielxlee.github.io/charts
+helm repo add clusternet https://danielxlee.github.io/clusternet-charts
 helm install my-clusternet-syncer -n clusternet-system --create-namespace \
   clusternet/clusternet-syncer
 ```

@@ -39,7 +39,7 @@ helm install my-clusternet-agent -n clusternet-system --create-namespace \
 To install the chart with the release name `my-agent` and release namespace `clusternet-system`:
 
 ```console
-helm repo add clusternet https://danielxlee.github.io/charts
+helm repo add clusternet https://danielxlee.github.io/clusternet-charts
 helm install my-clusternet-agent -n clusternet-system --create-namespace \
   --set parentURL=PLEASE-CHANGE-ME \
   --set registrationToken=PLEASE-CHANGE-ME \
