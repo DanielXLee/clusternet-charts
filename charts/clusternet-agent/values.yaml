@@ -43,8 +43,8 @@ serviceAccount:
 ## @param image.pullSecrets Specify docker-registry secret names as an array
 ##
 image:
-  registry: quay.io
-  repository: danielxlee/clusternet-agent
+  registry: csighub.tencentyun.com
+  repository: tdcc/clusternet-agent
   tag: v0.6.0
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
