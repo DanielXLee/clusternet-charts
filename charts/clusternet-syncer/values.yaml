@@ -34,8 +34,8 @@ serviceAccount:
 ## @param image.pullSecrets Specify docker-registry secret names as an array
 ##
 image:
-  registry: quay.io
-  repository: danielxlee/clusternet-syncer
+  registry: csighub.tencentyun.com
+  repository: tdcc/clusternet-syncer
   tag: v0.6.0
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -134,8 +134,10 @@ nodeAffinityPreset:
 ## Note: podAffinityPreset, podAntiAffinityPreset, and  nodeAffinityPreset will be ignored when it's set
 ##
 affinity: { }
+
+## @param CloudAPI for accessing the Tencent Cloud API
 CloudAPI:
-  apiDebug: true
+  apiDebug: "true"
   serviceRole:  example_role
   metaServiceURL: http://xxx.com
   serviceRegion:  yyy
