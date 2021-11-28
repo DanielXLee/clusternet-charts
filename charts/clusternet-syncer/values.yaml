@@ -134,3 +134,13 @@ nodeAffinityPreset:
 ## Note: podAffinityPreset, podAntiAffinityPreset, and  nodeAffinityPreset will be ignored when it's set
 ##
 affinity: { }
+CloudAPI:
+  apiDebug: true
+  serviceRole:  example_role
+  metaServiceURL: http://xxx.com
+  serviceRegion:  yyy
+  cloudAPIEndpoint: zzz.com
+  hostAliases:
+  - ip: 192.168.1.2 
+    hostnames:
+    - zzz.com

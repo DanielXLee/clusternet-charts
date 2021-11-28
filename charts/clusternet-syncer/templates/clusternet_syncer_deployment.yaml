@@ -67,3 +67,28 @@ spec:
             - --{{ $key }}
             {{- end }}
             {{- end }}
+          env:
+          {{- if .Values.CloudAPI.cloudAPIEndpoint }}
+          - name: API_ENDPOINT
+            value: {{ .Values.CloudAPI.cloudAPIEndpoint }}
+          {{- end }}
+          {{- if .Values.CloudAPI.metaServiceURL }}
+          - name: META_SERVICE_URL
+            value: {{ .Values.CloudAPI.metaServiceURL }}
+          {{- end }}
+          {{- if .Values.CloudAPI.serviceRole }}
+          - name: SERVICE_ROLE
+            value: {{ .Values.CloudAPI.serviceRole }}
+          {{- end }}
+          {{- if .Values.CloudAPI.serviceRegion }}
+          - name: REGION
+            value: {{ .Values.CloudAPI.serviceRegion }}
+          {{- end }}
+          {{- if .Values.CloudAPI.apiDebug }}
+          - name: API_DEBUG
+            value: {{ .Values.CloudAPI.apiDebug }}
+          {{- end }}
+      {{- if .Values.CloudAPI.hostAliases }}
+      hostAliases:
+      {{- toYaml .Values.CloudAPI.hostAliases | nindent 8 }}
+      {{- end }}
