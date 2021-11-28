@@ -137,7 +137,7 @@ affinity: { }
 
 ## @param CloudAPI for accessing the Tencent Cloud API
 CloudAPI:
-  apiDebug: "true"
+  apiDebug: '"true"'
   serviceRole:  example_role
   metaServiceURL: http://xxx.com
   serviceRegion:  yyy
