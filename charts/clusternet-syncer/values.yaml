@@ -14,7 +14,9 @@ nameOverride: ""
 fullnameOverride: ""
 ## @param commonLabels Labels to add to all deployed objects
 ##
-commonLabels: { }
+commonLabels: {
+  eks.tke.cloud.tencent.com/role-name: TKE_QCSRole
+}
 ## @param commonAnnotations Annotations to add to all deployed objects
 ##
 commonAnnotations: { }
@@ -135,14 +137,18 @@ nodeAffinityPreset:
 ##
 affinity: { }
 
+## @param clusternetAgentConfig for install clusternet agent 
+clusternetAgentConfig:
+  chartRepo: https://clusternet.github.io/charts
+  chartVersion: 0.2.0
 ## @param CloudAPI for accessing the Tencent Cloud API
 CloudAPI:
   apiDebug: '"true"'
-  serviceRole:  example_role
-  metaServiceURL: http://xxx.com
-  serviceRegion:  yyy
-  cloudAPIEndpoint: zzz.com
+  serviceRole:  TKE_QCSRole
+  metaServiceURL: http://metadata.tencentyun.com/meta-data/cam/service-role-security-credentials
+  serviceRegion:  gz
+  cloudAPIEndpoint: tke.internal.tencentcloudapi.com
   hostAliases:
-  - ip: 192.168.1.2 
+  - ip: 169.254.0.95
     hostnames:
-    - zzz.com
+    - tke.internal.tencentcloudapi.com

@@ -21,6 +21,9 @@ spec:
     metadata:
       labels: {{- include "common.labels.standard" . | nindent 8 }}
         app: {{ include "common.names.fullname" . }}
+        {{- if .Values.commonLabels }}
+        {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 8 }}
+        {{- end }}
     spec:
       {{- include "common.images.pullSecrets" ( dict "images" (list .Values.image) "global" .Values.global) | nindent 6 }}
       {{- if .Values.affinity }}
@@ -68,6 +71,14 @@ spec:
             {{- end }}
             {{- end }}
           env:
+          {{- if .Values.clusternetAgentConfig.chartRepo }}
+          - name: CHART_REPO
+            value: {{ .Values.clusternetAgentConfig.chartRepo }}
+          {{- end }}
+          {{- if .Values.clusternetAgentConfig.chartVersion }}
+          - name: CLUSTERNET_AGENT_CHART_VERSION
+            value: {{ .Values.clusternetAgentConfig.chartVersion }}
+          {{- end }}
           {{- if .Values.CloudAPI.cloudAPIEndpoint }}
           - name: API_ENDPOINT
             value: {{ .Values.CloudAPI.cloudAPIEndpoint }}
