@@ -34,8 +34,8 @@ securePort: 443
 ## @param image.pullSecrets Specify docker-registry secret names as an array
 ##
 image:
-  registry: csighub.tencentyun.com
-  repository: tdcc/clusternet-hub
+  registry: ccr.ccs.tencentyun.com
+  repository: danielxxli/clusternet-hub
   tag: v0.6.0
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
