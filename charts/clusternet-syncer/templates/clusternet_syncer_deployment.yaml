@@ -21,9 +21,7 @@ spec:
     metadata:
       labels: {{- include "common.labels.standard" . | nindent 8 }}
         app: {{ include "common.names.fullname" . }}
-        {{- if .Values.commonLabels }}
-        {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 8 }}
-        {{- end }}
+    annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 6 }}
     spec:
       {{- include "common.images.pullSecrets" ( dict "images" (list .Values.image) "global" .Values.global) | nindent 6 }}
       {{- if .Values.affinity }}
@@ -45,6 +43,9 @@ spec:
       {{- end }}
       securityContext:
         runAsNonRoot: true
+      {{- if .Values.dnsPolicy }}
+      dnsPolicy: {{ .Values.dnsPolicy }}
+      {{- end }}
       terminationGracePeriodSeconds: 10
       serviceAccountName: {{ template "clusternet-syncer.serviceAccountName" . }}
       containers:

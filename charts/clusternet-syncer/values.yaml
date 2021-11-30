@@ -14,12 +14,12 @@ nameOverride: ""
 fullnameOverride: ""
 ## @param commonLabels Labels to add to all deployed objects
 ##
-commonLabels: {
-  eks.tke.cloud.tencent.com/role-name: TKE_QCSRole
-}
+commonLabels: { }
 ## @param commonAnnotations Annotations to add to all deployed objects
 ##
-commonAnnotations: { }
+commonAnnotations: {
+  eks.tke.cloud.tencent.com/role-name: TKE_QCSLinkedRoleInEKSLog
+}
 
 ## @param replicaCount Number of clusternet-syncer replicas desired
 ##
@@ -136,6 +136,11 @@ nodeAffinityPreset:
 ## Note: podAffinityPreset, podAntiAffinityPreset, and  nodeAffinityPreset will be ignored when it's set
 ##
 affinity: { }
+
+## @param dnsPolicy for pod DNS
+## Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-sds
+##
+dnsPolicy: Default
 
 ## @param clusternetAgentConfig for install clusternet agent 
 clusternetAgentConfig:
