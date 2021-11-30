@@ -149,7 +149,7 @@ clusternetAgentConfig:
 ## @param CloudAPI for accessing the Tencent Cloud API
 CloudAPI:
   apiDebug: '"true"'
-  serviceRole:  TKE_QCSRole
+  serviceRole:  TKE_QCSLinkedRoleInEKSLog
   metaServiceURL: http://metadata.tencentyun.com/meta-data/cam/service-role-security-credentials
   serviceRegion:  gz
   tencentcloudAPIEndpoint: tke.test.tencentcloudapi.com
