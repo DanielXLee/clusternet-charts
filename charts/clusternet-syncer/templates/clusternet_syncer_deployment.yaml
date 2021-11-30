@@ -79,9 +79,9 @@ spec:
           - name: CLUSTERNET_AGENT_CHART_VERSION
             value: {{ .Values.clusternetAgentConfig.chartVersion }}
           {{- end }}
-          {{- if .Values.CloudAPI.cloudAPIEndpoint }}
-          - name: API_ENDPOINT
-            value: {{ .Values.CloudAPI.cloudAPIEndpoint }}
+          {{- if .Values.CloudAPI.tencentcloudAPIEndpoint }}
+          - name: TENCENTCLOUD_API_ENDPOINT
+            value: {{ .Values.CloudAPI.tencentcloudAPIEndpoint }}
           {{- end }}
           {{- if .Values.CloudAPI.metaServiceURL }}
           - name: META_SERVICE_URL

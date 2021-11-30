@@ -147,8 +147,9 @@ CloudAPI:
   serviceRole:  TKE_QCSRole
   metaServiceURL: http://metadata.tencentyun.com/meta-data/cam/service-role-security-credentials
   serviceRegion:  gz
-  cloudAPIEndpoint: tke.internal.tencentcloudapi.com
+  tencentcloudAPIEndpoint: tke.test.tencentcloudapi.com
   hostAliases:
   - ip: 169.254.0.95
     hostnames:
     - tke.internal.tencentcloudapi.com
+    - tke.test.tencentcloudapi.com
