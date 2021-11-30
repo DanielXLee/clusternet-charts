@@ -58,12 +58,23 @@ metadata:
   name: clusternet-syncer-manager-role
 rules:
 - apiGroups:
+  - apps.clusternet.io
+  resources:
+  - helmcharts
+  - subscriptions
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+- apiGroups:
   - clusters.clusternet.io
   resources:
   - clusterregistrationrequests
   verbs:
   - get
   - list
+  - update
   - watch
 - apiGroups:
   - clusters.clusternet.io
@@ -105,6 +116,7 @@ rules:
   - secrets
   verbs:
   - '*'
+
 ---
 apiVersion: {{ include "common.capabilities.rbac.apiVersion" . }}
 kind: RoleBinding
