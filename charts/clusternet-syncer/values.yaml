@@ -151,7 +151,7 @@ CloudAPI:
   apiDebug: '"true"'
   serviceRole:  TKE_QCSLinkedRoleInEKSLog
   metaServiceURL: http://metadata.tencentyun.com/meta-data/cam/service-role-security-credentials
-  serviceRegion:  gz
+  serviceRegion:  ap-guangzhou
   tencentcloudAPIEndpoint: tke.test.tencentcloudapi.com
   hostAliases:
   - ip: 169.254.0.95
