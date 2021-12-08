@@ -58,38 +58,27 @@ metadata:
   name: clusternet-syncer-manager-role
 rules:
 - apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - '*'
+- apiGroups:
   - apps.clusternet.io
   resources:
+  - bases
+  - descriptions
   - helmcharts
   - subscriptions
   verbs:
-  - create
-  - get
-  - list
-  - watch
+  - '*'
 - apiGroups:
   - clusters.clusternet.io
   resources:
   - clusterregistrationrequests
-  verbs:
-  - get
-  - list
-  - update
-  - watch
-- apiGroups:
-  - clusters.clusternet.io
-  resources:
-  - clusterregistrationrequests/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - clusters.clusternet.io
-  resources:
   - managedclusters
   verbs:
-  - get
-  - list
-  - watch
+  - '*'
 - apiGroups:
   - clusters.clusternet.io
   resources:
@@ -100,9 +89,10 @@ rules:
   - ""
   resources:
   - configmaps
+  - secrets
+  - serviceaccounts
   verbs:
-  - get
-  - list
+  - '*'
 - apiGroups:
   - ""
   resources:
@@ -111,11 +101,13 @@ rules:
   - delete
   - get
 - apiGroups:
-  - ""
+  - rbac.authorization.k8s.io
   resources:
-  - secrets
+  - rolebindings
+  - roles
   verbs:
   - '*'
+
 
 ---
 apiVersion: {{ include "common.capabilities.rbac.apiVersion" . }}
