@@ -69,6 +69,7 @@ rules:
   - bases
   - descriptions
   - helmcharts
+  - manifests
   - subscriptions
   verbs:
   - '*'
@@ -107,7 +108,12 @@ rules:
   - roles
   verbs:
   - '*'
-
+- apiGroups:
+  - shadow
+  resources:
+  - '*'
+  verbs:
+  - '*'
 
 ---
 apiVersion: {{ include "common.capabilities.rbac.apiVersion" . }}
